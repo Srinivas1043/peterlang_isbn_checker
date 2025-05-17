@@ -13,28 +13,67 @@ page = st.sidebar.radio("Go to", ["Peter Lang Checker", "How to Use"])
 # Instructions Page
 if page == "How to Use":
     st.title("🧾 How to Use the Peter Lang Book Checker")
-    st.markdown("""
-    ### 📂 Step-by-step Instructions
 
-    1. **Prepare your Excel (.xlsx)** file with columns such as:
-       - `Author Name`
-       - `ISBN`
-       - `Book Title`
-       - `Publication Date` (optional)
+    lang = st.radio("Choose your preferred language / உங்கள் மொழியைத் தேர்ந்தெடுங்கள்:", ["English", "தமிழ்"])
 
-    2. **Upload your Excel file** on the checker page.
+    if lang == "English":
+        st.markdown("""
+        ### 📂 Step-by-step Instructions
 
-    3. **Map the columns** appropriately.
+        1. **Prepare your Excel (.xlsx)** file with columns such as:
+           - `Author Name`
+           - `ISBN`
+           - `Book Title`
+           - `Publication Date` (optional)
 
-    4. **Click 'Check Availability'** to start the check.
+        2. **Upload your Excel file** on the checker page.
 
-    5. **View results** (Availability, Search URL, Final URL) live.
+        3. **Map the columns** appropriately.
 
-    6. **Download** results as CSV or Excel.
+        4. **Click 'Check Availability'** to start the check.
+           - The app checks if the ISBN redirects directly to a book page.
+           - If not, it searches Peter Lang and tries to match from the results.
 
-    ### 📬 Need Help?
-    For feedback or issues: **📧 sm1043@gmail.com**
-    """)
+        5. **View results**:
+           - Availability (Available / Not Available / Error)
+           - Search URL
+           - Final URL (if found)
+
+        6. **Download your results** in CSV or Excel format.
+
+        ### 📬 Need Help?
+        For feedback or issues: **📧 sm1043@gmail.com**
+        """)
+
+    elif lang == "தமிழ்":
+        st.markdown("""
+        ### 📂 படி படியாக வழிமுறை
+
+        1. **உங்கள் Excel (.xlsx)** கோப்பை தயார் செய்யுங்கள். இதில் பின்வரும் பத்திகள் இருக்கலாம்:
+           - `Author Name` (ஆசிரியர் பெயர்)
+           - `ISBN` (புத்தக எண்)
+           - `Book Title` (புத்தக தலைப்பு)
+           - `Publication Date` (வெளியீட்டு தேதி – விருப்பத்தேர்வு)
+
+        2. **இந்த Excel கோப்பை** பக்கத்தில் Upload செய்யுங்கள்.
+
+        3. **பத்திகளை சரியாக ஒதுக்குங்கள்** (எது ISBN, எது Book Title என).
+
+        4. **"Check Availability" பொத்தானை அழுத்துங்கள்**:
+           - ISBN இருந்தால் நேரடி redirect மூலம் புத்தக பக்கம் காணப்படும்.
+           - இல்லையெனில் Peter Lang தளத்தில் தேடல் நடைபெறும்.
+
+        5. **விளைவுகள்** பின்வருமாறு காணலாம்:
+           - கிடைக்கிறதா / இல்லை / பிழை
+           - தேடல் முகவரி
+           - இறுதிப் புத்தக இணைய முகவரி
+
+        6. **விளைவுகளை** CSV அல்லது Excel வடிவில் பதிவிறக்கம் செய்யலாம்.
+
+        ### 📬 உதவி தேவைப்படுகிறதா?
+        கருத்துகள் மற்றும் சிக்கல்களுக்கு: **📧 sm1043@gmail.com**
+        """)
+    
     st.stop()
 
 # Main App
